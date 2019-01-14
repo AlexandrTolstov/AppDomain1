@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace AppDomain1
 {
@@ -10,6 +11,10 @@ namespace AppDomain1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Creating new AppDomain.");
+            AppDomain domain = AppDomain.CreateDomain("MyDomain");
+            Console.WriteLine("Host domain: " + AppDomain.CurrentDomain.FriendlyName);
+            Console.WriteLine("child domain: " + domain.FriendlyName);
         }
     }
 }
